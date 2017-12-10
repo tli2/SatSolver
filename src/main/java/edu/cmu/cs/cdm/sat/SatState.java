@@ -27,11 +27,13 @@ public class SatState {
         curr++;
         if (curr >= mapping.length)
             return false;
-        output.log(String.format("Trying true for %s%n", Props.getName(mapping[curr])));
         if (assignment[curr] != Props.UNASSIGNED)
-            tryNextVar(output);
-        assignment[mapping[curr]] = Props.TRUE;
-        return true;
+            return tryNextVar(output);
+        else {
+            output.log(String.format("Trying true for %s%n", Props.getName(mapping[curr])));
+            assignment[mapping[curr]] = Props.TRUE;
+            return true;
+        }
     }
 
     public boolean tryNextBranch(OutputStrategy output) throws IOException {

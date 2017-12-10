@@ -14,6 +14,9 @@ public final class Args {
     @Parameter(names = "-output", description = "output file for execution trace")
     private String output;
 
+    @Parameter(names = "-stepbystep", description = "whether to watch the sat solver run step by step")
+    private boolean stepbystep = false;
+
     @Parameter(names = "-nounitprop", description = "do not use unit propagation")
     private boolean nounitpop = false;
 
@@ -27,5 +30,9 @@ public final class Args {
 
     public boolean useUnitProp() {
         return !nounitpop;
+    }
+
+    public boolean stepByStep() {
+        return stepbystep;
     }
 }

@@ -37,7 +37,7 @@ public class SatState {
     }
 
     public boolean tryNextBranch(OutputStrategy output) throws IOException {
-        if (assignment[mapping[curr]] == Props.FALSE) {
+        if (curr < 0 || assignment[mapping[curr]] == Props.FALSE) {
             return false;
         }
         output.log(String.format("Trying false for %s%n", Props.getName(mapping[curr])));
@@ -49,6 +49,9 @@ public class SatState {
     }
 
     public boolean backtrack() {
+        if (curr < 0) {
+            return false;
+        }
         for (int i = curr; i < mapping.length; i++) {
             assignment[mapping[i]] = Props.UNASSIGNED;
         }

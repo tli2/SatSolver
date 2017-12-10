@@ -21,6 +21,7 @@ public class Formula {
     }
 
     @SatValue int eval(@PropValue int[] val, boolean propagate, OutputStrategy out) throws IOException {
+        @SatValue int result = SAT;
         for (Clause c : clauses) {
             switch (c.sat(val, propagate, out)) {
                 case SAT:
@@ -28,12 +29,13 @@ public class Formula {
                 case CONFLICT:
                     return CONFLICT;
                 case UNRESOLVED:
-                    return UNRESOLVED;
+                    result = UNRESOLVED;
+                    break;
                 default:
                     throw new IllegalArgumentException();
             }
         }
-        return SAT;
+        return result;
     }
 
 

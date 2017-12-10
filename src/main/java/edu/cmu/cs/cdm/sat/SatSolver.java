@@ -18,7 +18,6 @@ public class SatSolver {
         for (int i = 0; i < assignment.length; i++)
             assignment[i] = i;
         state = new SatState(formula, assignment);
-        state.tryNextVar(out);
     }
 
     public boolean step() throws IOException {
@@ -28,12 +27,10 @@ public class SatSolver {
                 return false;
             case Formula.CONFLICT:
                 System.out.println("Conflict");
-                if (!state.tryNextBranch(out)) {
-                    while (!state.tryNextBranch(out)) {
-                        if (!state.backtrack()) {
-                            System.out.println("No solution");
-                            return false;
-                        }
+                while (!state.tryNextBranch(out)) {
+                    if (!state.backtrack()) {
+                        System.out.println("No solution");
+                        return false;
                     }
                 }
                 break;

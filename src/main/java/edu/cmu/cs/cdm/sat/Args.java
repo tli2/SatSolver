@@ -5,7 +5,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Command line arguments for the SAT solver
  */
-public class Args {
+public final class Args {
 
     @Parameter(names = "-input", description = "input SAT formula in CNF form", required = true)
     private String input;

@@ -2,6 +2,8 @@ package edu.cmu.cs.cdm.sat;
 
 import edu.cmu.cs.cdm.sat.Annotations.*;
 
+import java.io.IOException;
+
 public class SatState {
     private Formula formula;
     private @Prop int[] mapping;
@@ -21,22 +23,22 @@ public class SatState {
         return formula;
     }
 
-    public boolean tryNextVar() {
+    public boolean tryNextVar(OutputStrategy output) throws IOException {
         curr++;
         if (curr >= mapping.length)
             return false;
-        System.out.printf("Trying true for %s%n", Props.getName(mapping[curr]));
+        output.log(String.format("Trying true for %s%n", Props.getName(mapping[curr])));
         if (assignment[curr] != Props.UNASSIGNED)
-            tryNextVar();
+            tryNextVar(output);
         assignment[mapping[curr]] = Props.TRUE;
         return true;
     }
 
-    public boolean tryNextBranch() {
+    public boolean tryNextBranch(OutputStrategy output) throws IOException {
         if (assignment[mapping[curr]] == Props.FALSE) {
             return false;
         }
-        System.out.printf("Trying false for %s%n", Props.getName(mapping[curr]));
+        output.log(String.format("Trying false for %s%n", Props.getName(mapping[curr])));
         assignment[mapping[curr]] = Props.FALSE;
         for (int i = curr + 1; i < mapping.length; i++) {
             assignment[mapping[i]] = Props.UNASSIGNED;

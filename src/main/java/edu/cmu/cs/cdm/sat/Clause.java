@@ -2,6 +2,7 @@ package edu.cmu.cs.cdm.sat;
 
 import edu.cmu.cs.cdm.sat.Annotations.*;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Set;
 
@@ -19,7 +20,7 @@ public final class Clause {
         this.id = id;
     }
 
-    @SatValue int sat(@PropValue int[] val, boolean propagate) {
+    @SatValue int sat(@PropValue int[] val, boolean propagate, OutputStrategy out) throws IOException {
         int unassignedCount = 0;
         @Literal int unassignedLit = -1;
 
@@ -45,9 +46,9 @@ public final class Clause {
 
         if (unassignedCount == 1 && propagate) {
             val[Props.getProp(unassignedLit)] = Props.getSign(unassignedLit) ? Props.TRUE : Props.FALSE;
-            System.out.printf("Unit propagate %s to %b on clause %d%n",
+            out.log(String.format("Unit propagate %s to %b on clause %d%n",
                     Props.getName(Props.getProp(unassignedLit)),
-                    Props.getSign(unassignedLit), id);
+                    Props.getSign(unassignedLit), id));
             return SAT;
         }
         return unassignedCount == 0 ? CONFLICT : UNRESOLVED;

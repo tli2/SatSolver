@@ -2,6 +2,7 @@ package edu.cmu.cs.cdm.sat;
 
 import edu.cmu.cs.cdm.sat.Annotations.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +20,9 @@ public class Formula {
         return this;
     }
 
-    @SatValue int eval(@PropValue int[] val, boolean propagate) {
+    @SatValue int eval(@PropValue int[] val, boolean propagate, OutputStrategy out) throws IOException {
         for (Clause c : clauses) {
-            switch (c.sat(val, propagate)) {
+            switch (c.sat(val, propagate, out)) {
                 case SAT:
                     break;
                 case CONFLICT:

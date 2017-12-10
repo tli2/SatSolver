@@ -9,7 +9,10 @@ public final class Main {
         Args parsedArgs = new Args();
         new JCommander(parsedArgs, args);
         SatSolver solver = new SatSolver();
-        solver.solve(Parser.parseCnf(parsedArgs.getInput()));
+        OutputStrategy out = parsedArgs.getOutput() == null ?
+                new CommandlineOutputStrategy() : new FileOutputStrategy(parsedArgs.getOutput());
+        solver.solve(Parser.parseCnf(parsedArgs.getInput()), out, parsedArgs.useUnitProp());
+        out.close();
     }
 
     private Main() {}

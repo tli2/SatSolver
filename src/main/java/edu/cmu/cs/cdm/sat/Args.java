@@ -1,6 +1,7 @@
 package edu.cmu.cs.cdm.sat;
 
 import com.beust.jcommander.Parameter;
+import org.junit.runners.Parameterized;
 
 /**
  * Command line arguments for the SAT solver
@@ -13,11 +14,18 @@ public final class Args {
     @Parameter(names = "-output", description = "output file for execution trace")
     private String output;
 
+    @Parameter(names = "-nounitprop", description = "do not use unit propagation")
+    private boolean nounitpop = false;
+
     public String getInput() {
         return input;
     }
 
     public String getOutput() {
         return output;
+    }
+
+    public boolean useUnitProp() {
+        return !nounitpop;
     }
 }

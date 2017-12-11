@@ -1,6 +1,6 @@
-package edu.cmu.cs.cdm.sat;
+package edu.cmu.cs.cdm.sat.solver;
 
-import edu.cmu.cs.cdm.sat.Annotations.*;
+import edu.cmu.cs.cdm.sat.solver.Annotations.*;
 
 import java.util.HashMap;
 import java.util.Map;

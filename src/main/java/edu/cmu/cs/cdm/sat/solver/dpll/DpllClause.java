@@ -1,21 +1,22 @@
-package edu.cmu.cs.cdm.sat;
+package edu.cmu.cs.cdm.sat.solver.dpll;
 
-import edu.cmu.cs.cdm.sat.Annotations.*;
+import edu.cmu.cs.cdm.sat.OutputStrategy;
+import edu.cmu.cs.cdm.sat.solver.Annotations.*;
+import edu.cmu.cs.cdm.sat.solver.Props;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Set;
 
-import static edu.cmu.cs.cdm.sat.Formula.*;
+import static edu.cmu.cs.cdm.sat.solver.dpll.DpllFormula.*;
 
 /**
  * Created by Tianyu on 12/8/17.
  */
-public final class Clause {
+public final class DpllClause {
     private @Literal int[] lits;
     private int id;
 
-    Clause(Collection<@Literal Integer> lits, int id) {
+    DpllClause(Collection<@Literal Integer> lits, int id) {
         this.lits = lits.stream().mapToInt(Integer::intValue).toArray();
         this.id = id;
     }

@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a99577f-736d-4e3d-aada-841ce9651cf0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraphNode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/SatSolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclClause.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclSatSolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/ConflictGraph.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/StepByStepOutputStrategy.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Annotations.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Annotations.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllClause.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllFormula.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Props.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Props.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test" afterPath="$PROJECT_DIR$/test" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -43,8 +50,8 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+                <state relative-caret-position="203">
+                  <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -52,48 +59,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SatState.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java">
+          <file leaf-file-name="DpllSatState.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatState.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+                <state relative-caret-position="-172">
+                  <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#852#853#0" expanded="true" />
-                    <element signature="e#882#883#0" expanded="true" />
-                    <element signature="e#2104#2105#0" expanded="true" />
-                    <element signature="e#2137#2138#0" expanded="true" />
-                    <element signature="e#2199#2200#0" expanded="true" />
-                    <element signature="e#2238#2239#0" expanded="true" />
-                    <element signature="e#2302#2303#0" expanded="true" />
-                    <element signature="e#2342#2343#0" expanded="true" />
+                    <element signature="e#701#702#0" expanded="true" />
+                    <element signature="e#731#732#0" expanded="true" />
+                    <element signature="e#1953#1954#0" expanded="true" />
+                    <element signature="e#1986#1987#0" expanded="true" />
+                    <element signature="e#2048#2049#0" expanded="true" />
+                    <element signature="e#2087#2088#0" expanded="true" />
+                    <element signature="e#2151#2152#0" expanded="true" />
+                    <element signature="e#2191#2192#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Args.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#847#848#0" expanded="true" />
-                    <element signature="e#880#881#0" expanded="true" />
-                    <element signature="e#915#916#0" expanded="true" />
-                    <element signature="e#948#949#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="OutputStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/OutputStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -102,21 +83,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SatSolver.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+          <file leaf-file-name="DpllSatSolver.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Formula.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="777">
-                  <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+                <state relative-caret-position="189">
+                  <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -124,23 +95,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FileOutputStrategy.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/FileOutputStrategy.java">
+          <file leaf-file-name="Props.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Props.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Clause.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1138">
-                  <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+                <state relative-caret-position="441">
+                  <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -594,7 +553,6 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Defs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Annotations.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Prop.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ResolutionStrategy.java" />
@@ -602,16 +560,34 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/OutputStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/CommandlineOutputStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/FileOutputStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java" />
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraphNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/DpllSatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/SatState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/DpllSatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/DpllClause.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/CdclClause.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/ConflictGraph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Clause.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/SatState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/Formula.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DplFormula.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclClause.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/ConflictGraph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllFormula.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/SatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclSatSolver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java" />
       </list>
     </option>
   </component>
@@ -676,6 +652,35 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sat" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SatSolver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SatSolver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sat" type="462c0819:PsiDirectoryNode" />
+              <item name="solver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SatSolver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SatSolver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sat" type="462c0819:PsiDirectoryNode" />
+              <item name="solver" type="462c0819:PsiDirectoryNode" />
+              <item name="cdcl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SatSolver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SatSolver" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sat" type="462c0819:PsiDirectoryNode" />
+              <item name="solver" type="462c0819:PsiDirectoryNode" />
+              <item name="dpll" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -712,7 +717,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="edu.cmu.cs.cdm.sat.Main" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-input &quot;test&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="-input &quot;test&quot; -stepbystep" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -1197,12 +1202,12 @@
       <workItem from="1512759376757" duration="11996000" />
       <workItem from="1512921891307" duration="105000" />
       <workItem from="1512922130391" duration="115000" />
-      <workItem from="1512922661627" duration="10416000" />
+      <workItem from="1512922661627" duration="13501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33237000" />
+    <option name="totallyTimeSpent" value="36322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -1261,59 +1266,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Props.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="false" />
-            <element signature="e#1100#1101#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1324,7 +1276,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1334,7 +1286,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllFormula.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
@@ -1344,7 +1296,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllClause.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
@@ -1354,14 +1306,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Props.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Props.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="false" />
-            <element signature="e#1100#1101#0" expanded="false" />
+            <element signature="e#1083#1084#0" expanded="false" />
+            <element signature="e#1114#1115#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1371,13 +1323,13 @@
         <state relative-caret-position="357">
           <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1388,7 +1340,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Defs.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="81" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
@@ -1399,7 +1351,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Defs.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
@@ -1425,8 +1377,8 @@
         <state relative-caret-position="338">
           <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
           <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1438,7 +1390,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
@@ -1454,8 +1406,8 @@
         <state relative-caret-position="338">
           <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
           <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1467,7 +1419,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1482,8 +1434,8 @@
         <state relative-caret-position="338">
           <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
           <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1517,43 +1469,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Defs.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Annotations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ResolutionStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="53" lean-forward="false" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Props.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1589,28 +1509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/OutputStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1619,10 +1517,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraphNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Clause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/ConflictGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="63" lean-forward="false" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclClause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllClause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllFormula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Annotations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/FileOutputStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/SatSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/cdcl/CdclSatSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/OutputStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/Props.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="203">
+          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1637,74 +1675,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatSolver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Args.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Clause.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1138">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="462">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/Formula.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/solver/dpll/DpllSatState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="-172">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/ConflictGraphNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/FileOutputStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cmu/cs/cdm/sat/SatState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="58" lean-forward="true" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#2104#2105#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2199#2200#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
-            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+            <element signature="e#2048#2049#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2151#2152#0" expanded="true" />
+            <element signature="e#2191#2192#0" expanded="true" />
           </folding>
         </state>
       </provider>

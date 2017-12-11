@@ -1,16 +1,18 @@
-package edu.cmu.cs.cdm.sat;
+package edu.cmu.cs.cdm.sat.solver.dpll;
 
-import edu.cmu.cs.cdm.sat.Annotations.*;
+import edu.cmu.cs.cdm.sat.OutputStrategy;
+import edu.cmu.cs.cdm.sat.solver.Annotations.*;
+import edu.cmu.cs.cdm.sat.solver.Props;
 
 import java.io.IOException;
 
-public class SatState {
-    private Formula formula;
+public class DpllSatState {
+    private DpllFormula formula;
     private @Prop int[] mapping;
     private @PropValue int[] assignment;
     private @Prop int curr = -1;
 
-    public SatState(Formula formula, @Prop int[] mapping) {
+    public DpllSatState(DpllFormula formula, @Prop int[] mapping) {
         this.formula = formula;
         this.mapping = mapping;
         assignment = new int[mapping.length];
@@ -19,7 +21,7 @@ public class SatState {
         }
     }
 
-    public Formula getFormula() {
+    public DpllFormula getFormula() {
         return formula;
     }
 

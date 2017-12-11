@@ -17,8 +17,9 @@ public final class Args {
     @Parameter(names = "-stepbystep", description = "whether to watch the sat solver run step by step")
     private boolean stepbystep = false;
 
-    @Parameter(names = "-nounitprop", description = "do not use unit propagation")
-    private boolean nounitpop = false;
+    @Parameter(names = "-solver", description = "either simple (recursive backtracking with no unit propagation), " +
+            "                                   dpll or cdcl")
+    private String solver = "dpll";
 
     public String getInput() {
         return input;
@@ -28,11 +29,11 @@ public final class Args {
         return output;
     }
 
-    public boolean useUnitProp() {
-        return !nounitpop;
-    }
-
     public boolean stepByStep() {
         return stepbystep;
+    }
+
+    public String getSolver() {
+        return solver;
     }
 }

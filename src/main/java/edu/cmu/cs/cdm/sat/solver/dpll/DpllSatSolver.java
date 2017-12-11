@@ -1,14 +1,19 @@
-package edu.cmu.cs.cdm.sat;
+package edu.cmu.cs.cdm.sat.solver.dpll;
+
+import edu.cmu.cs.cdm.sat.OutputStrategy;
+import edu.cmu.cs.cdm.sat.solver.Props;
+import edu.cmu.cs.cdm.sat.solver.SatSolver;
+
 
 import java.io.IOException;
 
-public class SatSolver {
+public class DpllSatSolver implements SatSolver {
     private OutputStrategy out;
     private boolean propagate;
-    private Formula formula;
-    private SatState state;
+    private DpllFormula formula;
+    private DpllSatState state;
 
-    public SatSolver(Formula formula, OutputStrategy out, boolean propagate) throws IOException {
+    public DpllSatSolver(DpllFormula formula, OutputStrategy out, boolean propagate) throws IOException {
         this.out = out;
         this.propagate = propagate;
         this.formula = formula;
@@ -17,26 +22,27 @@ public class SatSolver {
         int[] assignment = new int[Props.getNumProps()];
         for (int i = 0; i < assignment.length; i++)
             assignment[i] = i;
-        state = new SatState(formula, assignment);
+        state = new DpllSatState(formula, assignment);
     }
 
+    @Override
     public boolean step() throws IOException {
         switch (formula.eval(state.getAssignment(), propagate, out)) {
-            case Formula.SAT:
+            case DpllFormula.SAT:
                 printSolution(state.getAssignment(), out);
                 return false;
-            case Formula.CONFLICT:
-                System.out.println("Conflict");
+            case DpllFormula.CONFLICT:
+                out.log("Conflict\n");
                 while (!state.tryNextBranch(out)) {
                     if (!state.backtrack()) {
-                        System.out.println("No solution");
+                        out.log("No solution\n");
                         return false;
                     }
                 }
                 break;
-            case Formula.UNRESOLVED:
+            case DpllFormula.UNRESOLVED:
                 if (!state.tryNextVar(out)) {
-                    System.out.println("No solution");
+                    out.log("No solution\n");
                     return false;
                 }
                 break;

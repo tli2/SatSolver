@@ -1,26 +1,29 @@
 package edu.cmu.cs.cdm.sat;
 
+import edu.cmu.cs.cdm.sat.solver.Props;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static edu.cmu.cs.cdm.sat.solver.Annotations.*;
+
 /**
  * Created by Tianyu on 12/5/17.
  */
 public final class Parser {
-    public static Formula parseCnf(String filename) throws IOException{
+    public static List<List<@Literal Integer>> parseCnf(String filename) throws IOException{
         try (BufferedReader in = new BufferedReader(new FileReader(filename))) {
-            Formula result = new Formula();
-            int id = 0;
-            for (String line = in.readLine(); line != null; line = in.readLine(), id++) {
-                result.add(parseClause(line, id));
+            List<List<@Literal Integer>> result = new ArrayList<>();
+            for (String line = in.readLine(); line != null; line = in.readLine()) {
+                result.add(parseClause(line));
             }
             return result;
         }
     }
 
-    private static Clause parseClause(String clause, int id) {
+    private static List<@Literal Integer> parseClause(String clause) {
         try (Scanner scanner = new Scanner(clause)) {
             List<Integer> result = new ArrayList<>();
             while (scanner.hasNext()) {
@@ -28,10 +31,9 @@ public final class Parser {
                 result.add(Props.formLiteral(Props.fromName(lit.replaceAll("!", "")),
                         !lit.startsWith("!")));
             }
-            return new Clause(result, id);
+            return result;
         }
     }
 
-    // TODO add more parsing functions
     private Parser() {}
 }

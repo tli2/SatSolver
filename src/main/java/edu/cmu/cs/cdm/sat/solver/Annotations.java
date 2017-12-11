@@ -1,4 +1,4 @@
-package edu.cmu.cs.cdm.sat;
+package edu.cmu.cs.cdm.sat.solver;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

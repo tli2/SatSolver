@@ -29,12 +29,12 @@ public class DpllSatSolver implements SatSolver {
     public boolean step() throws IOException {
         switch (formula.eval(state.getAssignment(), propagate, out)) {
             case DpllFormula.SAT:
+                out.log("solution found:\n");
                 printSolution(state.getAssignment(), out);
                 return false;
             case DpllFormula.CONFLICT:
-                out.log("Conflict\n");
                 while (!state.tryNextBranch(out)) {
-                    if (!state.backtrack()) {
+                    if (!state.backtrack(out)) {
                         out.log("No solution\n");
                         return false;
                     }
@@ -64,9 +64,13 @@ public class DpllSatSolver implements SatSolver {
     }
 
     private static void printSolution(int[] assignment, OutputStrategy out) throws IOException {
-        out.log("solution found:\n");
         for (int i = 0 ; i < assignment.length; i++) {
             out.log(String.format("%s: %s%n", Props.getName(i), printAssignment(assignment[i])));
         }
+    }
+
+    @Override
+    public void print() throws IOException {
+        printSolution(state.getAssignment(), out);
     }
 }

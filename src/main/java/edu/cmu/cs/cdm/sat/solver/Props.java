@@ -43,4 +43,8 @@ public final class Props {
     public static boolean getSign(@Literal int lit) {
         return lit % 2 == 1;
     }
+
+    public static @Literal int opposite(@Literal int lit) {
+        return formLiteral(getProp(lit), !getSign(lit));
+    }
 }

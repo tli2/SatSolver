@@ -11,9 +11,9 @@ import java.util.List;
  * Created by Tianyu on 12/8/17.
  */
 public class DpllFormula {
-    public static final @SatValue int SAT = 3;
-    public static final @SatValue int CONFLICT = 4;
-    public static final @SatValue int UNRESOLVED = 5;
+    static final @SatValue int SAT = 3;
+    static final @SatValue int CONFLICT = 4;
+    static final @SatValue int UNRESOLVED = 5;
     private List<DpllClause> clauses = new ArrayList<>();
 
     public DpllFormula(List<List<@Literal Integer>> clauses) {

@@ -46,14 +46,20 @@ public final class DpllClause {
         }
 
         if (unassignedCount == 1 && propagate) {
-            if (val[Props.getProp(unassignedLit)] != Props.UNASSIGNED)
+            if (val[Props.getProp(unassignedLit)] != Props.UNASSIGNED) {
+                out.log(String.format("Conflict on clause %d%n", id));
                 return CONFLICT;
+            }
             val[Props.getProp(unassignedLit)] = Props.getSign(unassignedLit) ? Props.TRUE : Props.FALSE;
             out.log(String.format("Unit propagate %s to %b on clause %d%n",
                     Props.getName(Props.getProp(unassignedLit)),
                     Props.getSign(unassignedLit), id));
             return SAT;
         }
-        return unassignedCount == 0 ? CONFLICT : UNRESOLVED;
+        if (unassignedCount == 0) {
+            out.log(String.format("Conflict on clause %d%n", id + 1));
+            return CONFLICT;
+        }
+        return UNRESOLVED;
     }
 }

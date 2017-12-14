@@ -50,7 +50,8 @@ public class DpllSatState {
         return true;
     }
 
-    public boolean backtrack() {
+    public boolean backtrack(OutputStrategy output) throws IOException {
+        output.log(String.format("backtracking from %s%n", Props.getName(mapping[curr])));
         if (curr < 0) {
             return false;
         }

@@ -4,4 +4,6 @@ import java.io.IOException;
 
 public interface SatSolver {
     boolean step() throws IOException;
+
+    void print() throws IOException;
 }

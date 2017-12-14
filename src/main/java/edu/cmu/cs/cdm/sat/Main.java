@@ -23,7 +23,7 @@ public final class Main {
                 solver = new DpllSatSolver(formula, out, parsedArgs.getSolver().equals("dpll"));
                 break;
             case "cdcl":
-                solver = new CdclSatSolver();
+                solver = new CdclSatSolver(Parser.parseCnf(parsedArgs.getInput()), out);
                 break;
             default:
                 throw new IllegalArgumentException("Unrecognized solver: " + parsedArgs.getSolver());
@@ -32,8 +32,9 @@ public final class Main {
         if (parsedArgs.stepByStep()) {
             try (Scanner scanner = new Scanner(System.in)) {
                 while (true) {
-                    scanner.nextLine();
-                    if (!solver.step()) break;
+                    if (scanner.nextLine().equals("p")) {
+                        solver.print();
+                    } else if (!solver.step()) break;
                 }
             }
         } else {

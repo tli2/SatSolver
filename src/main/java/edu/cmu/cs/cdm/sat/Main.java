@@ -32,6 +32,7 @@ public final class Main {
         if (parsedArgs.stepByStep()) {
             try (Scanner scanner = new Scanner(System.in)) {
                 while (true) {
+                    System.out.print(">");
                     if (scanner.nextLine().equals("p")) {
                         solver.print();
                     } else if (!solver.step()) break;
